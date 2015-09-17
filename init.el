@@ -29,3 +29,13 @@
   (spacemacs/maybe-install-dotfile)
   (require 'server)
   (unless (server-running-p) (server-start)))
+
+;; OWN Configuration
+;;;
+(set-face-attribute 'default t :font "DejaVu Sans Mono-12")
+(set-default-font "DejaVu Sans Mono-12")
+(load "c:/Users/j.arnaldich/AppData/Local/common-lisp/quicklisp/slime-helper.el")
+(setq inferior-lisp-program "e:/public/sbcl/sbcl-w7.exe --dynamic-space-size 1024")
+(setq slime-contribs '(slime-fancy))
+
+
