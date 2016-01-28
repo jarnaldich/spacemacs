@@ -41,7 +41,8 @@
     (progn
       (setq anaconda-mode-installation-directory
             (concat spacemacs-cache-directory "anaconda-mode"))
-      (add-hook 'python-mode-hook 'anaconda-mode))
+      ;; (add-hook 'python-mode-hook 'anaconda-mode)
+      )
     :config
     (progn
       (evil-leader/set-key-for-mode 'python-mode
