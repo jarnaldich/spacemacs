@@ -26,7 +26,7 @@
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; syntax-checking
+     syntax-checking
      version-control
      haskell
      racket
@@ -219,6 +219,20 @@ layers configuration."
   (setq fuel-listener-factor-image "e:/Soft/factor-windows-x86-64-0.97/factor/factor.image")
   (setq fuel-factor-root-dir "e:/Soft/factor-windows-x86-64-0.97/factor")
 
+  ;; SKELETONS
+  (define-skeleton icgc-py-module-header
+    "Capçalera estàndard per a mòduls icgc"
+    nil
+    "# -*- coding: utf-8 -*-" \n
+    "\"\"\"" \n
+    "Descripció: " _ "\n"
+    "Autor(s):" (getenv "USERNAME") "\n"
+    "\"\"\"" \n )
+
+  ;; PYTHON
+  (setq python-shell-completion-native t)
+  (setq python-shell-interpreter-args  "-i")
+  (setq python-shell-interpreter  "python")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -246,6 +260,7 @@ layers configuration."
    (quote
     ("c2c8e9917d17d2e5be05e4e8803d393c40c12eb385d5106b38b393e4791e9738" "bf3ec301ea82ab546efb39c2fdd4412d1188c7382ff3bbadd74a8ecae4121678" "9e1e2e7590c2f443c09a3f6240a05ada53f06566a6873c37eeae10d13dc372c9" default)))
  '(fci-rule-color "#073642" t)
+ '(haskell-interactive-popup-errors nil)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -272,7 +287,7 @@ layers configuration."
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
    (quote
-    (zenburn-theme monokai-theme toc-org org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets htmlize gnuplot evil-org multi-web-mode web-mode web lua-mode elm-mode geiser vbasense racket-mode mmm-mode markdown-toc markdown-mode clj-refactor cider-eval-sexp-fu cider align-cljlet spray magit-gitflow define-word which-key quelpa package-build auto-complete avy ghc company anzu iedit smartparens highlight flx haskell-mode popup pos-tip guide-key popwin yasnippet request gitignore-mode projectile helm helm-core parent-mode async pkg-info epl s evil-leader evil bind-key dash pyvenv pytest pyenv-mode pony-mode pip-requirements hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic f paradox magit company-quickhelp magit-popup git-commit with-editor hydra spinner window-numbering volatile-highlights vi-tilde-fringe use-package smooth-scrolling smeargle shm rfringe rainbow-delimiters powerline pcre2el page-break-lines open-junk-file neotree move-text macrostep linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-anything hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-descbinds helm-c-yasnippet helm-ag haskell-snippets guide-key-tip google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md fuel fringe-helper flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav diff-hl company-statistics company-ghc company-cabal cmm-mode clean-aindent-mode buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary aggressive-indent adaptive-wrap ace-window ace-link ace-jump-mode ac-ispell)))
+    (flycheck-pos-tip flycheck-haskell flycheck-elm flycheck zenburn-theme monokai-theme toc-org org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets htmlize gnuplot evil-org multi-web-mode web-mode web lua-mode elm-mode geiser vbasense racket-mode mmm-mode markdown-toc markdown-mode clj-refactor cider-eval-sexp-fu cider align-cljlet spray magit-gitflow define-word which-key quelpa package-build auto-complete avy ghc company anzu iedit smartparens highlight flx haskell-mode popup pos-tip guide-key popwin yasnippet request gitignore-mode projectile helm helm-core parent-mode async pkg-info epl s evil-leader evil bind-key dash pyvenv pytest pyenv-mode pony-mode pip-requirements hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic f paradox magit company-quickhelp magit-popup git-commit with-editor hydra spinner window-numbering volatile-highlights vi-tilde-fringe use-package smooth-scrolling smeargle shm rfringe rainbow-delimiters powerline pcre2el page-break-lines open-junk-file neotree move-text macrostep linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-anything hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-descbinds helm-c-yasnippet helm-ag haskell-snippets guide-key-tip google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md fuel fringe-helper flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav diff-hl company-statistics company-ghc company-cabal cmm-mode clean-aindent-mode buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary aggressive-indent adaptive-wrap ace-window ace-link ace-jump-mode ac-ispell)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(ring-bell-function (quote ignore))
